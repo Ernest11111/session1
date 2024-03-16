@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MIS</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>Личные данные</h1>
+    <img src="/media/qrcodes/{{ patient.pk_patient }}.png" alt="qr" width="100px">
+    <img src="/media/photos/{{ patient.pk_patient }}.jpg" alt="photo" width="100px">
+    Фамилия: <input type="text" name="surname" value="{{ patient.surname }}">
+    Имя: <input type="text" name="name" value="{{ patient.name }}">
+    Отчество: <input type="text" name="patronymic" value="{{ patient.patronymic }}">
+    Дата рождения: <input type="text" name="dob" value="{{ patient.dob }}">
+    Пол: <input type="text" name="gender" value="{{ patient.gender }}">
+    Место работы: <input type="text" name="working_place" value="{{ patient.working_place }}">
+    Телефон: <input type="text" name="phone" value="{{ patient.phone }}">
+    Email: <input type="text" name="email" value="{{ patient.email }}">
+    {#    agreement#}
+</form>
+</body>
+</html>
